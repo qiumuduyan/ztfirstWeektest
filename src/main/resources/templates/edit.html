@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form action="save" method="post">
+     <input th:value="${items.id}" disabled="true">
+     <input th:value="${items.id}" type="hidden" name="id">
+     <input name="name" th:value="${items.name}">
+     <input name="price" th:value="${items.price}">
+     <input name="detail" th:value="${items.detail}">
+     <input type="date" name="createtime" th:value="${items.createtime}">
+     <input type="submit">
+ </form>
+</body>
+</html>

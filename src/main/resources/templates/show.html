@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="selectByName">
+    精确查询<input name="name">
+    <input type="submit">
+</form>
+<form method="post" action="selectByNameLike">
+    模糊查询<input name="name">
+    <input type="submit">
+</form>
+
+<table>
+    <tr>
+        <td colspan="7">
+            <a href="add" style="margin: auto">增加</a>
+        </td>
+
+    </tr>
+    <tr th:each="memberEntry,memberStat:${list}">
+
+        <td th:text="${memberEntry.id}"/>
+        <td th:text="${memberEntry.name}"/>
+        <td th:text="${memberEntry.price}"/>
+        <td th:text="${memberEntry.detail}"/>
+        <td th:text="${memberEntry.createtime}"/>
+        <td><a th:href="@{edit(id=${memberEntry.id})}" th:text="修改"/></td>
+        <td><a th:href="@{delete(id=${memberEntry.id})}" th:text="删除"/></td>
+    </tr>
+</table>
+</body>
+</html>
